@@ -35,8 +35,8 @@ in html
         <nav>
             <hr width="50%"/>
             <a href="index.php" style="color:red;">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+            <a href="about.php">About</a>
+            <a href="contact.php">Contact</a>
         </nav>
         
         <br/><br/>
