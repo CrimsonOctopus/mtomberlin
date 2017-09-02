@@ -1,0 +1,47 @@
+h1 {
+    font-family:'Lobster',recursive;
+    color:yellow;
+}
+body {
+    text-align: center;
+    background:black;
+}
+
+#topLeft {
+    border-radius:100px 0px 0px 0px;
+}
+#topRight {
+    border-radius:0px 100px 0px 0px;
+}
+#bottomLeft {
+    border-radius:0px 0px 0px 100px;
+}
+#bottomRight {
+    border-radius:10px 0px 100px 0px;
+}
+
+#topLeft:hover {
+    height:102%;
+    width:102%;
+}
+#topRight:hover {
+    height:102%;
+    width:102%;
+}
+#bottomLeft:hover {
+    height:102%;
+    width:102%;
+}
+#bottomRight:hover {
+    height:102%;
+    width:102%;
+}
+
+div {
+    display: inline-block;
+}
+
+.season {
+    font-family:'Lobster',recursive;
+    color:white;
+}
