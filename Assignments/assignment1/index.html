@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<!--
+
+First Website
+and comment
+in html
+(comments can span multiple lines)
+
+-->
+
+<!-- This is the head -->
+<!-- All styles and javascript go inside the head -->
+    <head>
+        <meta charset="utf-8"/>
+        <title>Herald: A Twitch IRC CoopRPG</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    </head>
+<!-- closing head -->
+
+    <!-- This is the body -->
+    <!-- This is where we place the content of our website -->
+    <body> 
+        <nav>
+            <h1>Herald</h1>
+            <hr width="50%" align="right"/>
+            <a href="index.html" id="selected">Home</a>
+            <a href="gameplay.html">Gameplay</a>
+            <a href="mechanics.html">Mechanics</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        
+        <header>
+            <img src="img/header.png" style="width:100%;"/>
+        </header>
+        
+        <div class="section">
+            <div class="icons">
+                <a href="https://www.twitch.tv/redtentaclegames"><img src="img/unreal.png" alt="Unreal Logo"/></a>
+            </div>
+            <h1>Summary</h1>
+            <hr align="left" width="50%"/>
+            <div id="infoText">
+                <p>Herald is a video game developed in the <mark>Unreal 3D Game Engine</mark> in which the player is <span>The Captain</span> of an interstellar spaceship. <span>The Captain</span> must livestream their 
+                gameplay on the <mark>Twitch social game streaming platform</mark> so that the Twitch viewers can join as <span>The Crew</span> of the spaceship, performing actions by typing in the 
+                <mark>Twitch IRC chatroom</mark>. Together, the <span>The Captain and Crew</span> can scan, shoot weapons at, beam away teams to and comandeer enemy spaceships and space stations, as well as beam to
+                the surface of planets to build cities.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="icons">
+                <a href="https://www.twitch.tv/redtentaclegames"><img src="img/twitchicon.png" alt="Twitch Logo"/></a>
+            </div>
+            <h1>Made For Twitch</h1>
+            <hr align="left" width="50%"/>
+            <div id="infoText">
+                <p><mark>The Twitch social game streaming platform</mark> is a service through which a player can livestream their gameplay so that many other people can watch the gameplay in realtime and comment on it in an adjoing
+                text-based IRC chatroom. Twitch is optimized to allow hundreds of simultaneous viewers to watch the video in near-realtime. Herald is a game designed with this in mind, showing many character's information
+                on screen simultaneously in the spaceship's Room System. Additionally, Herald saves both the streamer's spaceship and each of the active viewer's characters betweem sessions, as well as other information
+                about the game world like cities and enemy resources, making it a persistent shared experience.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="icons">
+                <a href="https://www.twitch.tv/redtentaclegames"><img src="img/irc.png" alt="IRC Logo"/></a>
+            </div>
+            <h1>IRC CoopRPG</h1>
+            <hr align="left" width="50%"/>
+            <div id="infoText">
+                <p><mark>The text-based IRC chatroom</mark> adjoining each Twitch stream is an excellent choice for lightweight authentication of players, since each user in the IRC chatroom is unique and logged in through the Twitch
+                API. With this in mind, a user can issue commands to their character in the game by typing them in to the IRC chatroom, preceeded by the '!!' delimiter. The streamer's running game reads the IRC chat messages and
+                forwards them to the appropriate game object. In Herald, the viewer's characters are represented as a name in the ship's Room System (or in the Away Team of Fighter Systems), with their stats and selected targets
+                changing in response to the viewer's text actions. The cooperative nature of the game is expected to encourage interaction between viewers of the stream, as well as create a unique story on each session.</p>
+            </div>
+        </div>
+        
+        <!-- This is the footer -->
+        <!-- The footer goes inside the body but not always -->
+        <footer>
+            <img src="img/logo.png" alt="CSUMB Logo"/>
+            CST336. 2017&copy; Tomberlin<br/>
+            <strong>Disclaimer:</strong>The information in this wepage is fictitious. <br/>
+            It is for academic uses only.
+        </footer>
+        <!-- closing footer -->
+        
+    </body>
+    <!-- closing body -->
+
+</html>

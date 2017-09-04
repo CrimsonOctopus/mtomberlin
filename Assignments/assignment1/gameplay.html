@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<!--
+Mathew Tomberlin
+CSUMB CST 336
+9/4/2017
+gameplay.html
+-->
+
+<!-- This is the head -->
+<!-- All styles and javascript go inside the head -->
+    <head>
+        <meta charset="utf-8"/>
+        <title>Herald: A Twitch IRC CoopRPG</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    </head>
+<!-- closing head -->
+
+    <!-- This is the body -->
+    <!-- This is where we place the content of our website -->
+    <body>
+        <nav>
+            <h1>Herald</h1>
+            <hr width="50%" align="right"/>
+            <a href="index.html">Home</a>
+            <a href="gameplay.html" id="selected">Gameplay</a>
+            <a href="mechanics.html">Mechanics</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        
+        <header>
+            <img src="img/header3.png" style="width:100%;"/>
+        </header>
+        
+        <div id="content">
+            <dl>
+                <dt><mark><b>The Captain</b></mark></dt>
+                <dd>The Twitch streamer who is directly controlling the spaceship. The Captain can rotate the camera around the ship by dragging with the Left Mouse Button or rotate the ship in space by dragging with
+                the Right Mouse Button. The Captain can move the ship by adding or removing impulse forwards or laterally. The Captain select weapon targets by pressing the keyboard key corresponding to the weapon turret
+                slot and then Left Clicking on an enemy spaceship to target it. Using the same method as weapon targetting, the Captain can teleport Crew from the spaceship to enemy or allied spaceships, space stations or
+                planet surfaces, where they can fight, capture and kill the crew and comandeer, loot or destroy structures. The Captain can determine the economic and social policies of planetary cities and space stations,
+                which effects their resource output and the production of new ships, stations and weapons.</dd>
+                <dt><mark><b>Crew</b></mark></dt>
+                <dd>The Twitch viewers and IRC chatroom members who are directly controlling their crew members on the spaceship. The Crew each has their own health and survival stats, attack and defense stats and ability stats.
+                The Twitch viewer can create a crew by typing '!!start crewName' and can load their character afterwards by simply typing '!!start'. The Crew begins on one of the player's controlled space stations and can
+                board the spaceship when it boards at any space station. The Crew can be killed if their health reaches 0, either from combat damage, ship damage or hunger/suffocation/dehydration/disease, and will respawn at
+                a player-controlled space station again. Crew can operate rooms on the the spaceship, granting the spaceship bonuses based on their own ability stats in conjunction with the room they are operating. Additionally,
+                The Crew can repair the room they are currently occupying, thereby also repair the ship's entire hull and possibly restoring power to damaged ship systems. The Crew can elect to join the Away Team, from where they
+                can be teleported aboard enemy spaceships or space stations or down to the surface of planets for colonization or missions. The Crew can man a fighter pilot, either patrolling space nearby the ship or attacking 
+                nearby spaceships and fighters. The Crew, either operating turrets from the Weapons Room, pilotting fighters, boarding enemy ships or stations or assaulting ground facilities, can select their own targets from
+                available targets, displayed on-screen. The Crew can use special abilities from equipment that they can equip from the Armory on the spaceship.
+                </dd>
+                <dt><mark><b>Spaceship</b></mark></dt>
+                <dd>The spaceship is a complicated collection of systems including shields, hull, weapons, scanners, teleporters, life support, core and impulse, each of which is powered by and reliant on a specific room of the
+                spaceship. Each of these rooms can be damaged by incoming enemy fire or on-board mechanical failures and explosions caused by fires. The Crew must repair and maintain these rooms to ensure they stay operational, while
+                trying to operate them as often as possible to gain bonuses. The spaceship that the crew is currently operating is not necessarily the only ship in the fleet, however. By boarding an enemy ship or station and fighting
+                to it's command room, usuall the bridge, an Away Team can comandeer enemy stations and ships, at which point The Captain and Crew can transfer to the newly acquired ship to command it. Either way, uncommanded ships
+                will follow the command ship unless ordered to remain to guard stations or planetary structures.
+                </dd>
+            </dl>
+        </div>
+        <ul>
+            <li> <span class="feature">Flagship to Fleet</span>: Watch as your single flagship becomes and expansive fleet, assaulting heavily defended regions and planets.</li>
+            <li><span class="feature">Galactic Empire</span>: Conquered space stations and cities will grow and expand procedurally based on the crew you leave in them.</li>
+            <li><span class="feature">Cooperative Story</span>: Build your own epic story with new and old friends on Twitch.</li>
+            <li><span class="feature">Persistent Universe</span>: Your ships, stations and cities will be where you left them, unless they get destroyed.</li>
+        </ul>
+        
+        <!-- This is the footer -->
+        <!-- The footer goes inside the body but not always -->
+        <footer>
+            <img src="img/logo.png" alt="CSUMB Logo"/>
+            CST336. 2017&copy; Tomberlin<br/>
+            <strong>Disclaimer:</strong>The information in this wepage is fictitious. <br/>
+            It is for academic uses only.
+        </footer>
+        <!-- closing footer -->
+        
+    </body>
+    <!-- closing body -->
+
+</html>

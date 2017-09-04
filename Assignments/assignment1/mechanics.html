@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<!--
+Mathew Tomberlin
+CSUMB CST 336
+9/4/2017
+mechanics.html
+-->
+
+<!-- This is the head -->
+<!-- All styles and javascript go inside the head -->
+    <head>
+        <meta charset="utf-8"/>
+        <title>Herald: A Twitch IRC CoopRPG</title>
+        <!--INTERNAL STYLE EXAMPLE
+        <style>
+            body {
+                background-color:#000066 !important;
+            }
+        </style>-->
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    </head>
+<!-- closing head -->
+
+    <!-- This is the body -->
+    <!-- This is where we place the content of our website -->
+    <body> <!--INLINE STYLE EXAMPLE style="background-color:black; color:white;"-->
+        <nav>
+            <h1>Herald</h1>
+            <hr width="50%" align="right"/>
+            <a href="index.html">Home</a>
+            <a href="gameplay.html">Gameplay</a>
+            <a href="mechanics.html" id="selected">Mechanics</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        
+        <header>
+            <img src="img/blueprint.png" style="width:100%;"/>
+        </header>
+        
+        <div id="content">
+            <dl>
+                <dt><mark><b>Twitch Delay</b></mark></dt>
+                <dd>One issue with reading the IRC chatroom adjoining the Twitch stream is that the Twitch video stream is always about 10 seconds behind the IRC chatroom, meaning that when a viewer types a command in the IRC
+                chatroom, the game recieves it immediately, but the viewer won't see the action on screen for 10 seconds. This problem was known of before development and the game was built around this constraint. As such, nearly all
+                actions are events that take place over time such that their effect in a given moment is less important then their effect over time, giving the viewer time to respond even with a 10 second delay. The streamer has
+                no delay and is given the option to override many crew choices so that if the crew are not responding fast enough or at all, the Captain can still perform actions.</dd>
+                <dt><mark><b>Twitch IRC Authentication</b></mark></dt>
+                <dd>Because viewers in the IRC chatrooms are authenticated through the Twitch API, we don't need to authenticate again besides using their username as the key to their character's save file. From here, we can save and
+                load their character's information to a save file using their username.</dd>
+                <dt><mark><b>Unreal Component System</b></mark></dt>
+                <dd>The spaceship is meant to be a complicated system of rooms and ship systems, requiring multiple people to fully utilize. In order to maintain this in a reasonable means through programming, the spaceship's blueprint
+                in the Unreal Engine is made up of multiple sub-components, each of which is saved and loaded independently. The components require certain rooms to be operational in order for that component to be operational (for example,
+                the Impulse Component, which allows ship movement, requires that the Engines, Core and Bridge be operational. Each of the different components can communicate with each other through the ship's base blueprint
+                that they're all attached to as components.</dd>
+                <dt><mark><b>Unreal Data Binding</b></mark></dt>
+                <dd>One benefit of using Unreal Engine is it's superb user interface development system, UMG. This allows us to bind the data values of spaceship components, crew and rooms to UI elements, keeping them up to date
+                in realtime without complicated spaghetti code. This is important because showing lots of information onscreen simultaneously is a key to this design method.</dd>
+            </dl>
+        </div>
+        <ul>
+            <li> <span class="feature">Networking-Light</span>: By only reading from an IRC chatroom, the game itself only uses a minimal amount of bandwidth.</li>
+            <li><span class="feature">Cooperative Gameplay</span>: By utilizing Twitch's chatroom system, we can create a unique cooperative game over the internet.</li>
+            <li><span class="feature">Local Persistence</span>: Because the viewers communicate with the game remotely, all the save data can be held on the streamer's local machine.</li>
+        </ul>
+        
+        <!-- This is the footer -->
+        <!-- The footer goes inside the body but not always -->
+        <footer>
+            <img src="img/logo.png" alt="CSUMB Logo"/>
+            CST336. 2017&copy; Tomberlin<br/>
+            <strong>Disclaimer:</strong>The information in this wepage is fictitious. <br/>
+            It is for academic uses only.
+        </footer>
+        <!-- closing footer -->
+        
+    </body>
+    <!-- closing body -->
+
+</html>
