@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <!--
-
-First Website
-and comment
-in html
-(comments can span multiple lines)
-
+Mathew Tomberlin
+CSUMB CST 336
+9/4/2017
+index.html
 -->
 
 <!-- This is the head -->
@@ -23,16 +21,18 @@ in html
     <!-- This is where we place the content of our website -->
     <body> 
         <nav>
-            <h1>Herald</h1>
-            <hr width="50%" align="right"/>
-            <a href="index.html" id="selected">Home</a>
-            <a href="gameplay.html">Gameplay</a>
-            <a href="mechanics.html">Mechanics</a>
-            <a href="contact.html">Contact</a>
+            <div class="siteTitle">Herald</div>
+            <hr>
+            <div>
+                <a href="index.html" id="selected">Home</a>
+                <a href="gameplay.html">Gameplay</a>
+                <a href="mechanics.html">Mechanics</a>
+                <a href="contact.html">Contact</a>
+            </div>
         </nav>
         
         <header>
-            <img src="img/header.png" style="width:100%;"/>
+            <img src="img/header.png" style="width:100%;" alt="Image of the game"/>
         </header>
         
         <div class="section">
@@ -40,8 +40,8 @@ in html
                 <a href="https://www.twitch.tv/redtentaclegames"><img src="img/unreal.png" alt="Unreal Logo"/></a>
             </div>
             <h1>Summary</h1>
-            <hr align="left" width="50%"/>
-            <div id="infoText">
+            <hr>
+            <div class="infoText">
                 <p>Herald is a video game developed in the <mark>Unreal 3D Game Engine</mark> in which the player is <span>The Captain</span> of an interstellar spaceship. <span>The Captain</span> must livestream their 
                 gameplay on the <mark>Twitch social game streaming platform</mark> so that the Twitch viewers can join as <span>The Crew</span> of the spaceship, performing actions by typing in the 
                 <mark>Twitch IRC chatroom</mark>. Together, the <span>The Captain and Crew</span> can scan, shoot weapons at, beam away teams to and comandeer enemy spaceships and space stations, as well as beam to
@@ -54,8 +54,8 @@ in html
                 <a href="https://www.twitch.tv/redtentaclegames"><img src="img/twitchicon.png" alt="Twitch Logo"/></a>
             </div>
             <h1>Made For Twitch</h1>
-            <hr align="left" width="50%"/>
-            <div id="infoText">
+            <hr>
+            <div class="infoText">
                 <p><mark>The Twitch social game streaming platform</mark> is a service through which a player can livestream their gameplay so that many other people can watch the gameplay in realtime and comment on it in an adjoing
                 text-based IRC chatroom. Twitch is optimized to allow hundreds of simultaneous viewers to watch the video in near-realtime. Herald is a game designed with this in mind, showing many character's information
                 on screen simultaneously in the spaceship's Room System. Additionally, Herald saves both the streamer's spaceship and each of the active viewer's characters betweem sessions, as well as other information
@@ -67,8 +67,8 @@ in html
                 <a href="https://www.twitch.tv/redtentaclegames"><img src="img/irc.png" alt="IRC Logo"/></a>
             </div>
             <h1>IRC CoopRPG</h1>
-            <hr align="left" width="50%"/>
-            <div id="infoText">
+            <hr>
+            <div class="infoText">
                 <p><mark>The text-based IRC chatroom</mark> adjoining each Twitch stream is an excellent choice for lightweight authentication of players, since each user in the IRC chatroom is unique and logged in through the Twitch
                 API. With this in mind, a user can issue commands to their character in the game by typing them in to the IRC chatroom, preceeded by the '!!' delimiter. The streamer's running game reads the IRC chat messages and
                 forwards them to the appropriate game object. In Herald, the viewer's characters are represented as a name in the ship's Room System (or in the Away Team of Fighter Systems), with their stats and selected targets

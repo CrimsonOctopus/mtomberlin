@@ -3,6 +3,17 @@ body {
     color:white;
 }
 
+body hr :not(nav){
+    width: 50%;
+    margin-left:auto;
+}
+
+nav hr{
+    width: 50%;
+    margin-right:auto;
+    display:inline-block;
+}
+
 footer {
     text-align: center;
     font-size:0.8em;
@@ -22,7 +33,7 @@ nav {
     width: 100%;
 }
 
-nav h1 {
+.siteTitle {
     font-size:5em;
     margin: 0px 20px 0px 0px;
 }
@@ -61,12 +72,12 @@ footer {
     clear:left;
 }
 
-#infoText {
+.infoText {
     float:left;
     text-align:left;
 }
 
-#infoText span{
+.infoText span{
     background-color: blue;
 }
 
