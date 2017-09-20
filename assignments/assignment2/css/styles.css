@@ -131,6 +131,7 @@ ul {
 }
 
 dd {
+    display:inline-block;
     padding-bottom:50px;
 }
 

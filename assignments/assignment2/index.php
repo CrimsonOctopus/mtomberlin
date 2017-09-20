@@ -38,7 +38,7 @@ mechanics.html
                 <a href="../assignment1/index.html">Home</a>
                 <a href="../assignment1/gameplay.html">Gameplay</a>
                 <a href="../assignment1/mechanics.html">Mechanics</a>
-                <a href="../assignment2/ships.php" id="selected">Ship</a>
+                <a href="../assignment2/index.php" id="selected">Ship</a>
                 <a href="../assignment1/contact.html">Contact</a>
             </div>
         </nav>
