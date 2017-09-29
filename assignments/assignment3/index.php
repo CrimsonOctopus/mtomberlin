@@ -56,6 +56,7 @@ mechanics.html
             <?php echo $_SESSION['shipsOn']!=1?'Select a category to browse game objects and locales.':'' ?>
             <form>
                 <input type="submit" value="Browse"/>
+                <input type="text" name="keyword" placeholder="Enter a keyword" value=<?php echo isset($_SESSION['keyword'])?$_SESSION['keyword']:''?>>
                 <input type="checkbox" name="ships" value='on' <?php echo $_SESSION['shipsOn']==1?'checked':''?>>Ships
                 <input type="checkbox" name="stations" value='on' <?php echo $_SESSION['stationsOn']==1?'checked':''?>>Stations
                 <input type="checkbox" name="systems" value='on' <?php echo $_SESSION['systemsOn']==1?'checked':''?>>Systems
@@ -66,44 +67,31 @@ mechanics.html
         <br><br><br><br>
             <?php
                 if(isset($_GET['ships'])){
-                    echo "<div id='ships'>"
-                        ."<h3 class='heading'>Ships</h3>";
                     if(isset($_GET['results']) && $_GET['results']>0){
-                        generateShips($_GET['results']);
+                        generateShips($_GET['results'], $_GET['keyword']);
                     } else {
-                        generateShips(4);
+                        generateShips(4, $_GET['keyword']);
                     }
-                    echo "</div>";
                 }
             ?>
-        </div>
         
             <?php
                 if(isset($_GET['stations'])){
-                    echo "<div id='stations'>"
-                        ."<h3 class='heading'>Stations</h3>";
                     if(isset($_GET['results']) && $_GET['results']>0){
-                        generateStations($_GET['results']);
+                        generateStations($_GET['results'], $_GET['keyword']);
                     } else {
-                        generateStations(4);
+                        generateStations(4, $_GET['keyword']);
                     }
-                    echo "</div>";
                 }
             ?>
-        </div>
-        
-        <br><br><br><br>
         
             <?php
                 if(isset($_GET['systems'])){
-                    echo "<div id='systems'>"
-                        ."<h3 class='heading'>Systems</h3>";
                     if(isset($_GET['results']) && $_GET['results']>0){
-                        generateSystems($_GET['results']);
+                        generateSystems($_GET['results'], $_GET['keyword']);
                     } else {
-                        generateSystems(4);
+                        generateSystems(4, $_GET['keyword']);
                     }
-                    echo "</div>";
                 }
             ?>
         <div id="spacer"></div>

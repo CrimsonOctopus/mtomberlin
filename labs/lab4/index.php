@@ -4,19 +4,19 @@ $backgroundImage="img/sea.jpg";
 
 if(isset($_GET['keyword'])){
     include 'api/pixabayAPI.php';
-    $imageURLs = getImageURLs($_GET['keyword']);
-    $backgroundImage = $imageURLs[array_rand($imageURLs)];
     
-    for($i = 0; $i < 5; $i++){
-        do{
-            $rand = rand(0,count($imageURLs));
-        } while(!isset($imageURLs[$rand]));
-        
-        echo "<img src=".$imageURLs[$rand]." width='200'/>";
-        unset($imageURLs[$rand]);
+    $keyword = $_GET['keyword'];
+    if(!empty($_GET['category'])){
+        $keyword=$_GET['category'];
     }
+    if(isset($_GET['layout'])){
+        $imageURLs = getImageURLs($keyword, $_GET['layout']);
+    } else {
+        $imageURLs = getImageURLs($keyword);
+    }
+    
+    $backgroundImage = $imageURLs[array_rand($imageURLs)];
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +36,7 @@ if(isset($_GET['keyword'])){
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         
+        
         <h2>
             Type a keyword to display a slideshow
             with random images from Pixabay.com
@@ -43,7 +44,33 @@ if(isset($_GET['keyword'])){
         
         <form>
             <input type="text" name="keyword" placeholder="Type keyword"/>
+            
+            <input type="radio" id="lhorizontal" name="layout" value="horizontal"><label for="lhorizontal">Horizontal</label>
+            <input type="radio" id="lvertical" name="layout" value="vertical"><label for="lvertical">Vertical</label>
+            <select name="category">
+                <option value="">Select One</option>
+                <option value="ocean">Sea</option>
+                <option value="forest">Forest</option>
+                <option value="mountain">Mountain</option>
+            </select>
+            
             <input type="submit" value="Go!" name="submitButton"/>
         </form>
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <?php
+                for($i = 0; $i < 5; $i++){
+                    do{
+                        $rand = rand(0,count($imageURLs));
+                    } while(!isset($imageURLs[$rand]));
+                    
+                    echo "<div class='item ".(($i==0)?"active":"")."'>";
+                    echo "<img src=".$imageURLs[$rand]."/>";
+                    echo "</div>";
+                    unset($imageURLs[$rand]);
+                }
+                ?>
+            </div>
+        </div>
     </body>
 </html>
