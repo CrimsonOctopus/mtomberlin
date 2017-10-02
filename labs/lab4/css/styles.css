@@ -1,13 +1,20 @@
-    body{
+    body {
         opacity:0.9;
         width:100%;
         text-align:center;
         color:yellow;
+        border-radius:25px;
+    }
+    
+    select {
+        color:black;
     }
     
     input {
         font-size: 3em;
         color: black;
+        border-radius: 25px;
+        
     }
     
     #carousel-example-generic {
