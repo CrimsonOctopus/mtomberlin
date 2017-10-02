@@ -53,9 +53,9 @@
             <!--Layout and Category sections will be added after completing the tutorial-->
             <div id="layoutDiv">
                 <input type="radio" name="layout" value="horizontal" id="layout_h" <?= (($_GET['layout']=="horizontal")?"checked":"")?>/>
-                <label for="layout_h"> Horizontal </label><br />
+                <label for="layout_h"> Horizontal </label><br>
                  <input type="radio" name="layout" value="vertical" id="layout_v" <?= (($_GET['layout']=="vertical")?"checked":"")?> />
-                 <label for="layout_v"> Vertical </label><br />
+                 <label for="layout_v"> Vertical </label><br>
             </div>
             <br />
             <select name="category" style="color:black; font-size:1.5em">
