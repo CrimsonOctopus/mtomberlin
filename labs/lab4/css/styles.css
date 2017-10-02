@@ -10,6 +10,10 @@
         color:black;
     }
     
+    select {
+        color:black;
+    }
+    
     input {
         font-size: 3em;
         color: black;

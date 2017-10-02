@@ -128,30 +128,39 @@ ul {
     color:yellow;
 }
 
-#ships {
-    width: 45%;
-    float: left;
-    padding-right:5%;
-}
-
 dd {
     display:inline-block;
-    padding-bottom:50px;
+}
+
+dl {
+    background-color:#333333;
+    margin:5px;
+    padding:5px;
 }
 
 .thumbnail {
-    width:30%;
+    width:500px;
+}
+
+#ships {
+    width: 30%;
+    margin-right:1%;
+    background-color:#444444;
     float:left;
 }
 
 #stations {
-    width: 45%;
+    width: 30%;
+    margin-right:1%;
+    background-color:#444444;
     float:left;
 }
 
 #systems {
-    width: 45%;
-    padding-top:150px;
+    width: 30%;
+    margin-right:1%;
+    background-color:#444444;
+    float:left;
 }
 
 input {
