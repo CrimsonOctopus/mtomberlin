@@ -14,24 +14,28 @@
         
         public function displayShip(){
             echo "<dl>"
-            ."<dt>".$this->name."</dt>"
+            ."<dt><h4>".$this->name."</h4></dt>"
             ."<dd><img src='".$this->image."' class='thumbnail'/>"
             ."<p>".$this->description
             ."<br><br>"
             ."<a href='./details.php?ship=".$this->name."'>Details</a>"
             ."</p></dd></dl>";
         }
+        
+        public function getName(){
+            return $this->name;
+        }
     }
     
     function initializeShips(){
         if(!isset($_SESSION['ships'])){
             $ships = array();
-            $ship1 = new Ship("Prototron",'./img/ship1.jpg',"This is the ship that the player begins with, hidden away on a remote planet with the last human cloning facility.");
-            $ship2 = new Ship("Crusher",'./img/ship2.jpg',"The Crusher is an advanced military craft developed near the end of the war.");
-            $ship3 = new Ship("Harbinger",'./img/ship3.jpg',"The capital ship of the Pliedan fleet, the Harbinger is capable of laying waste to whole systems.");
-            $ship4 = new Ship("Sythe",'./img/ship4.jpg',"The Pliedan assault ship is fast and nimble, cutting through swathes through the human fighter squadrons.");
-            $ship5 = new Ship("Nova",'./img/ship5.jpg',"This ship is equipped with a massively powerful beam capable of cutting through planet surface.");
-            $ship6 = new Ship("Valor",'./img/ship6.jpg',"The Valor was a massive spacecraft designed to be used by the Imperial Knights before the destruction of humanity.");
+            $ship1 = new Ship("Prototron",'./img/ship1.jpg',"A fast, adaptable ship constructed from primitive components.");
+            $ship2 = new Ship("Crusher",'./img/ship2.jpg',"An advanced military craft developed near the end of the war.");
+            $ship3 = new Ship("Harbinger",'./img/ship3.jpg',"Capital ship of the Pliedan fleet, capable of laying waste to whole systems.");
+            $ship4 = new Ship("Sythe",'./img/ship4.jpg',"Fast and nimble, cutting through swathes through the human fighter squadrons.");
+            $ship5 = new Ship("Nova",'./img/ship5.jpg',"Equipped with a massively powerful beam capable of cutting through planet surface.");
+            $ship6 = new Ship("Valor",'./img/ship6.jpg',"Designed to be used by the Imperial Knights before the destruction of humanity.");
             array_push($ships,$ship1);
             array_push($ships,$ship2);
             array_push($ships,$ship3);
@@ -107,54 +111,163 @@
             unset($_SESSION[$numberBox]);
         }
     }
-    function generateShips($results){
+    
+    function persistTextBox($textBox){
+        if(isset($_GET[$textBox])){
+                $_SESSION[$textBox]=$_GET[$textBox];
+        } else {
+            unset($_SESSION[$textBox]);
+        }
+    }
+    function generateShips($results,$keyword){
         $nums = array();
         $numShips = 5;
-        if($results <= $numShips){
+        if(!isset($keyword) || empty($keyword)){
+            if($results >= $numShips){
+                $results = $numShips;
+            }
+            $titleShown = false;
             for($i = 0; $i < $results; $i++){
                 do{
                     $rand = rand(0,$numShips);
                     $found = in_array($rand,$nums);
                 }while($found);
                 $nums[] = $rand;
-                
-                $ship = $_SESSION['ships'][$rand];
+                $index = $rand;
+                if(!$titleShown){
+                    echo "<div id='ships'>"
+                        ."<h2 class='heading'>Ships</h3>";
+                    $titleShown = true;
+                }
+                    
+                $ship = $_SESSION['ships'][$index];
                 $ship->displayShip();
+            }
+            if($titleShown){
+                echo "</div>";
+            }
+        } else {
+            $titleShown = false;
+            for($i = 0; $i < $numShips; $i++){
+                if(strpos($_SESSION['ships'][$i]->getName(), $keyword) !== false){
+                    $index = $i;
+                    
+                    if(!$titleShown){
+                        echo "<div id='ships'>"
+                            ."<h2 class='heading'>Ships</h3>";
+                        $titleShown = true;
+                    }
+                    
+                    $ships = $_SESSION['ships'][$index];
+                    $ships->displayShip();
+                }
+            }
+            if($titleShown){
+                echo "</div>";
             }
         }
     }
     
-    function generateStations($results){
+    function generateStations($results,$keyword){
         $nums = array();
         $numStations = 5;
-        if($results <= $numStations){
+        if(!isset($keyword) || empty($keyword)){
+            if($results >= $numStations){
+                $results = $numStations;
+            }
+            $titleShown = false;
             for($i = 0; $i < $results; $i++){
-                do{
+                 do{
                     $rand = rand(0,$numStations);
                     $found = in_array($rand,$nums);
                 }while($found);
                 $nums[] = $rand;
+                $index = $rand;
                 
-                $stations = $_SESSION['stations'][$rand];
+                if(!$titleShown){
+                    echo "<div id='stations'>"
+                        ."<h2 class='heading'>Stations</h3>";
+                    $titleShown = true;
+                }
+                
+                $stations = $_SESSION['stations'][$index];
                 $stations->displayShip();
+                
+            }
+            if($titleShown){
+                echo "</div>";
+            }
+        } else {
+            $titleShown = false;
+            for($i = 0; $i < $numStations; $i++){
+                if(strpos($_SESSION['stations'][$i]->getName(), $keyword) !== false){
+                    $index = $i;
+                    
+                    if(!$titleShown){
+                        echo "<div id='stations'>"
+                            ."<h2 class='heading'>Stations</h3>";
+                        $titleShown = true;
+                    }
+                    
+                    $stations = $_SESSION['stations'][$index];
+                    $stations->displayShip();
+                }
+            }
+            if($titleShown){
+                echo "</div>";
             }
         }
     }
     
-    function generateSystems($results){
+    function generateSystems($results,$keyword){
         $nums = array();
         $numSystems = 5;
-        if($results <= $numSystems){
+        if(!isset($keyword) || empty($keyword)){
+            if($results >= $numSystems){
+                $results = $numSystems;
+            }
+            
+            $titleShown = false;
             for($i = 0; $i < $results; $i++){
                 do{
                     $rand = rand(0,$numSystems);
                     $found = in_array($rand,$nums);
                 }while($found);
                 $nums[] = $rand;
+                $index = $rand;
+                
+                if(!$titleShown){
+                    echo "<div id='systems'>"
+                        ."<h2 class='heading'>Systems</h3>";
+                    $titleShown = true;
+                }
                 
                 $systems = $_SESSION['systems'][$rand];
                 $systems->displayShip();
             }
+            if($titleShown){
+                echo "</div>";
+            }
+        } else {
+            $titleShown = false;
+            for($i = 0; $i < $numSystems; $i++){
+                if(strpos($_SESSION['systems'][$i]->getName(), $keyword) !== false){
+                    $index = $i;
+                    
+                    if(!$titleShown){
+                        echo "<div id='systems'>"
+                            ."<h2 class='heading'>Systems</h3>";
+                        $titleShown = true;
+                    }
+                    
+                    $systems = $_SESSION['systems'][$index];
+                    $systems->displayShip();
+                }
+            }
+            if($titleShown){
+                echo "</div>";
+            }
         }
+            
     }
 ?>
