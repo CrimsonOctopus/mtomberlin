@@ -1,9 +1,9 @@
 <?php
 function getDatabaseConnection(){
-    $host = 'localhost';//cloud 9
+    $host = 'us-cdbr-iron-east-05.cleardb.net';//cloud 9
     $dbname = 'tcp';
-    $username = 'root';
-    $password = '';
+    $username = 'b3d9df8340a3c9';
+    $password = '8f3e3255';
     $dbConn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $dbConn -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     
