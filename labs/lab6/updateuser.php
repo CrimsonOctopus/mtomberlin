@@ -35,10 +35,15 @@
     }
     
     if(isset($_GET['updateUserForm'])){
-        $sql = "UPDATE tc_user SET firstName = :fName, lastName = :lName WHERE userId = :userId";
+        $sql = "UPDATE tc_user SET firstName = :fName, lastName = :lName, email = :email, universityId = :universityId, phone = :phone, gender = :gender, role= :role, deptId = :deptId WHERE userId = :userId";
         $namedParameters['fName'] = $_GET['firstName'];
         $namedParameters['lName'] = $_GET['lastName'];
-        $namedParameters['userId'] = $_GET['userId'];
+        $namedParameters['email'] = $_GET['email'];
+        $namedParameters['universityId'] = $_GET['universityID'];
+        $namedParameters['phone'] = $_GET['phone'];
+        $namedParameters['gender'] = $_GET['gender'];
+        $namedParameters['role'] = $_GET['role'];
+        $namedParameters['deptID'] = $_GET['deptID'];
         
         $stmt = $conn->prepare($sql);
         $stmt->execute($namedParameters);
