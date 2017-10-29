@@ -3,24 +3,12 @@
 
     include 'dbconnection.php';
     $conn = getDatabaseConnection();
-
-    function getDepartmentInfo(){
-        global $conn;
-        $sql = "SELECT deptName, departmentId
-                FROM `tc_department` 
-                ORDER BY deptName";
-        
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
-        $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $records;
-    }
     
-    function getItemInfo($userId) {
+    function getItemInfo($gameId) {
         global $conn;
         $sql = "SELECT * 
-                FROM tc_user
-                WHERE userId = ".$userId;
+                FROM vg_game
+                WHERE game_id = ".$gameId;
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $record = $stmt->fetch(PDO::FETCH_ASSOC);

@@ -8,8 +8,8 @@
     function getItems() {
         global $conn;
         $sql = "SELECT * 
-                FROM tc_user
-                ORDER BY lastName";
+                FROM vg_game
+                ORDER BY game_name";
         $statement = $conn->prepare($sql);
         $statement->execute();
         $users = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -20,10 +20,10 @@
     
     function showItems($items){
         foreach($items as $item) {
-            echo "<a href='viewitem.php?itemId=".$item['userId']."'>".$item['firstName'] . "  " . $item['lastName']."</a>";
+            echo "<a href='viewitem.php?itemId=".$item['game_id']."'>".$item['game_name'] . " " . $item['console_name']."<br>Genre: ".$item['genre'] . "<br>Release: " . $item['game_release']."</a><br>";
             
             echo "<form action='addtocart.php' style='display:inline'>";
-            echo "<input type='hidden' name='itemId' value='".$item['userId']."'>";
+            echo "<input type='hidden' name='itemId' value='".$item['game_id']."'>";
             echo "<input type='submit' value='Add to Cart'>";
             echo "</form>";
             echo "<br />";

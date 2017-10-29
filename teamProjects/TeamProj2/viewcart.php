@@ -8,8 +8,8 @@
     function getItem($itemId) {
         global $conn;
         $sql = "SELECT * 
-                FROM tc_user
-                WHERE userId = $itemId";
+                FROM vg_game
+                WHERE game_id = $itemId";
         $statement = $conn->prepare($sql);
         $statement->execute();
         $user = $statement->fetch(PDO::FETCH_ASSOC);
@@ -19,7 +19,7 @@
     
     
     function showItem($item){
-        echo "<a href='viewitem.php?itemId=".$item['userId']."'>".$item['firstName'] . "  " . $item['lastName']."</a><br>";
+        echo "<a href='viewitem.php?itemId=".$item['game_id']."'>".$item['game_name'] . " " . $item['console_name']."<br>Genre: ".$item['genre'] . "<br>Release: " . $item['game_release']."</a><br>";
     }
     
     function getCart(){
