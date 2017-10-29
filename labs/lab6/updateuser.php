@@ -30,7 +30,7 @@
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $record = $stmt->fetch(PDO::FETCH_ASSOC);
-        print_r($record);
+        
         return $record;
     }
     
@@ -43,7 +43,8 @@
         $namedParameters['phone'] = $_GET['phone'];
         $namedParameters['gender'] = $_GET['gender'];
         $namedParameters['role'] = $_GET['role'];
-        $namedParameters['deptID'] = $_GET['deptID'];
+        $namedParameters['deptId'] = $_GET['deptID'];
+        $namedParameters['userId'] = $_GET['userId'];
         
         $stmt = $conn->prepare($sql);
         $stmt->execute($namedParameters);
@@ -57,12 +58,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Add User </title>
+        <title> Update User </title>
     </head>
     <body>
         
        <fieldset>
-           <legend>Add New User</legend>
+           <legend>Update User</legend>
            
            <form>
                <input type="hidden" name="userId" value=<?= $userInfo['userId']?>>
