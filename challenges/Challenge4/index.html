@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+        <script>
+            var v1 = -1;
+            var v2 = -1;
+            var v3 = -1;
+            var vals = []
+            function check() {
+                v1 = document.getElementById("v1").value;
+                v2 = document.getElementById("v2").value;
+                v3 = document.getElementById("v3").value;
+                if(v1>50 || v1<1 || v2>50 || v2<1 || v3>50 || v3<1){
+                    document.getElementById('alert').innerHTML = "Input out of range, number must be between 1 - 50";
+                    document.getElementById('alert').style.color = "red";
+                } else {
+                    document.getElementById('alert').innerHTML = "";
+                }
+                
+                sort();
+                greatest();
+            }
+            
+            function sort(){
+                vals = [v1,v2,v3];
+                if(v1 == v2 && v2 == v3){
+                    document.getElementById('alert').innerHTML = "All the inputs are equal!";
+                }
+                
+                vals.sort();
+                document.getElementById('sorted').innerHTML = "The numbers in ascending order are: " + vals.toString();
+            }
+            
+            function greatest(){
+                document.getElementById('max').innerHTML = "The biggest number is " + vals[2];
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Sorting Numbers</h1>
+        
+        Enter numbers from 1 - 50:<br>
+        Number 1: <input type="text" id="v1"/><br>
+        Number 2: <input type="text" id="v2"/><br>
+        Number 3: <input type="text" id="v3"/><br>
+        <button onclick="check()">Sort!</button>
+        <div id="equality"></div>
+        <h2 id="max"></h2>
+        <div id="sorted"></div>
+        <p id="alert"></p>
+    </body>
+</html>
