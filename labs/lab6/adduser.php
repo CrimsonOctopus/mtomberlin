@@ -20,7 +20,7 @@
         $stmt->execute();
         $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $records;
-    }
+    }s
     if (isset($_GET['addUserForm'])){
         //the administrator clicked on the "Add User" button
         $firstName = $_GET['firstName'];
