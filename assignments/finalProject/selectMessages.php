@@ -4,11 +4,11 @@
     $conn = getDatabaseConnection();
     
     $sql = "SELECT *
-            FROM messages";
+            FROM messages ";
     
     if(isset($_GET['username'])&&$_GET['username']!=""){
         $username = $_GET['username'];
-        $sql .= " WHERE username LIKE :username ";
+        $sql .= "WHERE username LIKE :username ";
         if(isset($_GET['text']) && $_GET['text']!=""){
             $sql .= " AND";
         }
@@ -17,10 +17,12 @@
     if(isset($_GET['text'])&&$_GET['text']!=""){
         $text = $_GET['text'];
         if(!isset($_GET['username']) || $_GET['username']==""){
-            $sql .= " WHERE";
+            $sql .= "WHERE";
         }
         $sql .= " text LIKE :text ";
     }
+    
+    $sql .= "ORDER BY timeOfPost DESC ";
     
     if(isset($username)||isset($text)){
         $namedParameters = array();

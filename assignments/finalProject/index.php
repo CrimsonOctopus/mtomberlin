@@ -115,12 +115,12 @@ mechanics.html
                 Filter By User <input type="text" id="userFilter"><br>
                 Filter By Text <input type="text" id="textFilter"><br>
             </div>
-            <div id="messages"></div>
-            <div id="newMessage">
+            <div class="messageBox" id="newMessage">
                 Username <input type="text" id="username" value=<?= $_SESSION['username'] ?> disabled><br>
                 Message <input type="text" id="messageText"><br>
                 <button id="sendMessage" onclick="sendMessage()">Send</button>
             </div>
+            <div id="messages"></div>
         </div>
     </body>
 </html>
