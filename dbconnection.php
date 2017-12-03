@@ -1,13 +1,13 @@
 <?php
 function getDatabaseConnection($dbname = 'tcp'){
-    /*$host = 'us-cdbr-iron-east-05.cleardb.net';//cloud 9
+    $host = 'us-cdbr-iron-east-05.cleardb.net';//cloud 9
     $dbname = 'heroku_0f5cc24af187a3f';
     $username = 'b3d9df8340a3c9';
-    $password = '8f3e3255';*/
-    $host = 'localhost';//cloud 9
+    $password = '8f3e3255';
+    /*$host = 'localhost';//cloud 9
     //$dbname = 'tcp';
     $username = 'root';
-    $password = '';
+    $password = '';*/
     
     //using different database variables in Heroku
     if  (strpos($_SERVER['HTTP_HOST'], 'herokuapp') !== false) {
