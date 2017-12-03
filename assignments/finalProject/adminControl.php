@@ -121,7 +121,9 @@ mechanics.html
                 }
             }
             var messageId = -1;
+            
             $(document).ready(function(){
+                selectMessages();
                 $("#userFilter").change( function(){ filter(); } );
                 $("#textFilter").change( function(){ filter(); } );
             });
