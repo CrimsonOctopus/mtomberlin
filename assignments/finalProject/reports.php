@@ -62,9 +62,6 @@ mechanics.html
                     url: "adminLogoutProcess.php",
                     dataType: "json",
                     data: { },
-                    success: function(data) {
-                        
-                    },
                     complete: function(data){
                         location.href = "index.php"
                     }
