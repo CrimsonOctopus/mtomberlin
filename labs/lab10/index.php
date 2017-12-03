@@ -69,21 +69,21 @@
             </fieldset>
         </form>
         <br><br><br><br>
-        <div class='warningDiv'>
-            <fieldset id="warningFieldset">
                 <?php
                     //Upload image if under max size
                     if($_FILES['myFile']['size'] > 114000){
+                        echo "<div class='warningDiv'>".
+                             "<fieldset id='warningFieldset'>";
                         echo " <br> <h2> Image Too Big </h2>";
                         echo "File Size: " . $_FILES['myFile']['size'] . " bytes/114000 bytes";
+                        echo "</fieldset>".
+                             "</div>";
                     } else {
                         if(isset($_FILES['myFile'])){
                             move_uploaded_file($_FILES["myFile"]["tmp_name"], "gallery/". $_FILES["myFile"]["name"] );
                         }
                     }
                 ?>
-            </fieldset>
-        </div>;
         
         <div class="gallery">
         <?php
