@@ -1,0 +1,196 @@
+body {
+    background-color:white;
+}
+
+#forumBody {
+    margin-top:200px;
+}
+
+#messages {
+    color:white;
+}
+
+body hr :not(nav){
+    width: 50%;
+    margin-left:auto;
+}
+
+nav hr{
+    width: 50%;
+    margin-right:auto;
+    display:inline-block;
+}
+
+footer {
+    text-align: center;
+    font-size:0.8em;
+}
+
+footer img{
+    height: 50px;
+}
+
+header {
+    padding-top: 130px;
+}
+
+nav {
+    text-align: right;
+    overflow: hidden;
+    font-family:'Questrial',sans-serif;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.siteTitle {
+    font-size:5em;
+    margin: 0px 20px 0px 0px;
+}
+
+nav a {
+    padding:15px;
+    padding-bottom: 4px;
+    margin: 0px 10px 0px 0px;
+    font-size:1.8em;
+    text-decoration: none;
+    color:white;
+}
+
+#visited {
+    padding:15px;
+    padding-bottom: 4px;
+    margin: 0px 10px 0px 0px;
+    font-size:1.8em;
+    text-decoration: none;
+    color:red;
+}
+
+nav a:hover {
+    padding:15px;
+    padding-bottom: 4px;
+    font-size:2.0em;
+    text-decoration: none;
+    color:blue;
+}
+
+#selected {
+    color: red;
+    text-decoration: underline;
+    font-size:2.0em;
+}
+
+#selected:hover {
+    color: orange;
+    text-decoration: underline;
+    font-size:2.0em;
+}
+
+footer {
+    font-size:0.8em;
+    clear:left;
+}
+
+.infoText {
+    float:left;
+    text-align:left;
+}
+
+.infoText span{
+    background-color: blue;
+}
+
+#summary h1{
+    font-size:2em;
+}
+
+#summary img{
+    float: left;
+}
+
+.section {
+    float:left;
+    max-width: 29%;
+    max-width: 30%;
+    padding:0px 5px 0px 5px;
+}
+
+.section span :not(#infoText){
+    width: 65%;
+    float: left;
+}
+
+.section img {
+    width: 25%;
+    padding: 10px 25px;
+    float: left;
+}
+
+.section img:hover {
+    width: 25%;
+    opacity: 0.5;
+    padding: 10px 25px;
+    float: left;
+}
+
+ul {
+    
+    text-align:left;
+    padding-left:550px;
+}
+
+.feature {
+    color:yellow;
+}
+
+dd {
+    display:inline-block;
+}
+
+dl {
+    background-color:#333333;
+    margin:5px;
+    padding:5px;
+}
+
+.thumbnail {
+    width:500px;
+}
+
+#ships {
+    width: 30%;
+    margin-right:1%;
+    background-color:#444444;
+    float:left;
+}
+
+#stations {
+    width: 30%;
+    margin-right:1%;
+    background-color:#444444;
+    float:left;
+}
+
+#systems {
+    width: 30%;
+    margin-right:1%;
+    background-color:#444444;
+    float:left;
+}
+
+input {
+    display: inline;
+}
+
+a {
+    color: #00AAFF;
+}
+
+a:visited :not(nav){
+    color: #0066FF;
+}
+
+a:hover :not(nav){
+    color: #00FFFF;
+}
