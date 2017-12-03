@@ -54,7 +54,7 @@ mechanics.html
             function sendMessage(){
                 var username = $('#username').val();
                 var text = $('#messageText').val();
-                console.log("Username: "+username+", Text: "+text);
+                $('#messageText').val("");
                 
                 $.ajax({
                     type: "GET",
