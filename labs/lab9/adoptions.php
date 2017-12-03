@@ -2,20 +2,20 @@
     include 'inc/header.php';
     
      function getPetList() {
-            include '../../dbconnection.php';
-            $conn = getDatabaseConnection("c9");
+        include '../../dbconnection.php';
+        $conn = getDatabaseConnection("c9");
 
 
-            $sql = "SELECT *
-                    FROM adoptees"; 
-                    
-                            
-            $stmt = $conn->prepare($sql);
-            $stmt->execute();
-            $record = $stmt->fetchAll(PDO::FETCH_ASSOC);//expecting only one record
- 
-            return $record;
-        }
+        $sql = "SELECT *
+                FROM adoptees"; 
+                
+                        
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $record = $stmt->fetchAll(PDO::FETCH_ASSOC);//expecting only one record
+
+        return $record;
+    }
 ?>
   
 <script>
